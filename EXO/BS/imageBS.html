@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Image Bootstrap</title>
+</head>
+
+<body>
+    <p class="lead bg-success p-3 text-center">création de cadre autour d'une image</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" alt="Logo HTML w3"
+                    style="width:100%; height:auto">
+                <p>Style normal</p>
+            </div>
+            <div class="col-6">
+                <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" class="rounded" alt="Logo HTML w3"
+                    style="width:100%; height:auto">
+                <p>Légèrement arrondie</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" class="rounded-circle"
+                    alt="Logo HTML w3" style="width:100%; height:auto">
+                <p>Ellipse</p>
+            </div>
+            <div class="col-6">
+                <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" class="img-thumbnail"
+                    alt="Logo HTML w3" style="width:100%; height:auto">
+                <p>Bordure 1px légèrement arondie
+            </div>
+        </div>
+    </div>
+    <p class="lead bg-success p-3 text-center">flottement à gauche ou à droite</p>
+    <div class="container">
+        <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" alt="Logo HTML w3"
+            style="width:200px; height:auto" class="float-left">
+        <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" alt="Logo HTML w3"
+            style="width:200px; height:auto" class="float-right img-thumbnail">
+    </div>
+    <p class="lead bg-success p-3 text-center">centrer une image : 2 solutions</p>
+    <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" alt="Logo HTML w3"
+        style="width:200px; height:auto" class="d-block mx-auto">
+    <br>
+    <div class="text-center">
+        <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" alt="Logo HTML w3"
+            style="width:200px; height:auto" class="img-thumbnail">
+    </div>
+    <p class="lead bg-success p-3 text-center">adapter l'image à la taille de l'écran</p>
+    <img src="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" alt="Logo HTML w3" class="rounded img-fluid">
+</body>
+
+</html>

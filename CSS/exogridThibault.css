@@ -1,0 +1,89 @@
+* {
+  font-family: Tahoma, sans-serif;
+}
+body {
+  margin-top: 0;
+  background-color: black;
+}
+/************************* Grille *******************/
+#grilleGreta {
+  display: grid;
+  grid-template-columns: 20% 1fr 1fr 1fr;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+/************************** Entete avec Titre *****************************/
+#entete {
+  background-color: gray;
+  grid-area: 1 / 1 / 1 / 6;
+  border: 2px solid blue;
+}
+#titre1 {
+  color: white;
+}
+#titre2 {
+  color: white;
+}
+/*************************** Navigation ***********************************/
+#menu {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: blue;
+  box-sizing: border-box;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+li {
+  margin: 0 auto;
+  background-color: yellow;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid blue;
+  cursor: pointer;
+  width: 80%;
+  height: 50px;
+}
+a {
+  text-align: center;
+  text-decoration: none;
+}
+li:hover,
+a:hover {
+  background-color: rgb(206, 207, 134);
+}
+
+/**************************** Partie Texte ********************************/
+#contenu {
+  background-color: white;
+  grid-area: 2 / 2 / 3 / 6;
+  margin-left: 20px;
+}
+#contenu h1 {
+  background-color: whitesmoke;
+  border-bottom: 4px solid rgb(63, 103, 128);
+}
+#p1 {
+  line-height: 1em;
+  border: 4px solid rgb(96, 204, 231);
+  border-radius: 10px;
+  padding: 10px;
+}
+#contenu h2 {
+  margin: 30px 0px 30px 50px;
+  color: rgb(81, 170, 192);
+  margin-left: 50px;
+}
+.red {
+  color: rgb(209, 47, 47);
+}
+.blue {
+  color: rgb(22, 22, 230);
+  text-decoration: underline;
+}
+.green {
+  color: rgb(21, 126, 85);
+}

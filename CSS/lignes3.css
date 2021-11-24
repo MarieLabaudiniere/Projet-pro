@@ -1,0 +1,29 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+p{
+    font-size: 1em;
+}
+  
+/*On augmente l'écart par défaut entre les mots de 0.5em*/
+.p1{
+   word-spacing: 0.5em
+}
+  
+/*On augmente l'écart par défaut entre les mots de 1em*/
+.p2{
+    word-spacing: 1em
+}
+  
+/*On réduit l'écart par défaut entre les mots de 0.1em*/
+.p3{
+    word-spacing: -0.1em;
+}
+
+/*On réduit l'écart par défaut entre les mots de 1em*/
+.p4{
+    word-spacing: -1em;
+}
+

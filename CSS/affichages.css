@@ -1,0 +1,11 @@
+ul{
+    display: list-item;
+    list-style-type: kannada;
+    list-style-position: inside;
+   /* background-color: bisque;*/
+}
+
+
+li{
+    background-color: aqua;
+}

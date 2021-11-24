@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Bordures Bootstrap</title>
+</head>
+
+<body>
+    <p class="lead bg-primary p-3">définir les bordures</p>
+    <div class="container">
+        <p class="bg-light border mt-2">.border</p>
+        <p class="bg-light border-top">.border-top</p>
+        <p class="bg-light border-right">.border-right</p>
+        <p class="bg-light border-bottom">.border-bottom</p>
+        <p class="bg-light border-left">.border-left</p>
+    </div>
+    <p class="lead bg-primary p-3">supprimer des bordures</p>
+    <div class="container">
+        <p class="bg-light border border-0">.border .border-0</p>
+        <p class="bg-light border border-top-0">.border .border-top-0</p>
+        <p class="bg-light border border-right-0">.border .border-right-0</p>
+        <p class="bg-light border border-bottom-0">.border .border-bottom-0</p>
+        <p class="bg-light border border-left-0">.border .border-left-0</p>
+    </div>
+    <p class="lead bg-primary p-3">créer une bordure de couleur</p>
+    <!--attention les classe border-couleur ne créent pas de bordure-->
+    <div class="container">
+        <p class="bg-light border border-primary">.border .border-primary</p>
+        <p class="bg-light border border-secondary">.border .border-secondary</p>
+        <p class="bg-light border border-success">.border .border-success</p>
+        <p class="bg-light border border-danger">.border .border-danger</p>
+        <p class="bg-light border border-warning">.border .border-warning</p>
+        <p class="bg-light border border-info">.border .border-info</p>
+        <p class="bg-light border border-dark">.border .border-dark</p>
+    </div>
+    <div class="container-fluid bg-dark pt-2 pb-2">
+        <p class="text-white border border-light">.border .border-light</p>
+        <p class="text-white border border-white">.border .border-white</p>
+    </div>
+    
+    <p class="lead bg-primary p-3">créer des bords arrondis</p>
+    <div class="container mt-2">
+        <p class="text-white bg-dark p-2 rounded">.border .rounded</p>
+        <p class="text-white bg-dark p-2 rounded-top">.border .rounded-top</p>
+        <p class="text-white bg-dark p-2 rounded-right">.border .rounded-right</p>
+        <p class="text-white bg-dark p-2 rounded-bottom">.border .rounded-bottom</p>
+        <p class="text-white bg-dark p-2 rounded-left">.border .rounded-left</p>
+        <p class="text-white bg-dark p-2 rounded-circle">.border .rounded-circle</p>
+        <p class="text-white bg-dark p-2 rounded-pill">.border .rounded-pill</p>
+        <p class="text-white bg-dark p-2 rounded rounded-0">.border .rounded-0</p>
+    </div>
+
+</body>
+
+</html>

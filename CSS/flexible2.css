@@ -1,0 +1,62 @@
+#conteneur {
+    display: flex;
+    background-color: grey;
+    border: 10px solid purple;
+    width: 300px;
+    height: 500px;
+   /* margin: 20% auto;*/
+    /*direction d'entrée des éléments*/
+    flex-direction: row;
+    /*si débordement alors passage à la ligne suivante ou colonne suivante*/
+    flex-wrap: wrap;
+    /*le padding nous permettra de voir les débordements*/
+    padding: 20px;
+    /*indique la gestion des espaces à l'intérieur du conteneur
+    selon l'axe principal*/
+    justify-content: space-around;
+    /*indique la gestion des espaces à l'intérieur du conteneur
+    selon l'axe secondaire*/
+    align-items: center;
+    /*répartition des lignes*/
+    align-content : center;
+}
+
+.affichageBox {
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+#element1 {
+    background-color: orange;
+    flex: auto;
+}
+
+#element2 {
+    background-color: blue;
+    flex: auto;
+}
+
+#element3 {
+    background-color: green;
+    flex: auto;
+    
+}
+
+#element4 {
+    background-color: red;
+    flex: auto;
+}
+
+#element5 {
+    background-color: pink;
+    /*align-self : flex-end;*/
+    flex: auto;
+}
+.dernier {
+    order:4;
+}
+.premier {
+    order:-2;
+}

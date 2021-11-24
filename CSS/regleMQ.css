@@ -1,0 +1,28 @@
+
+
+.conteneur-flex{
+    display: flex;
+    /*flex-direction : présentation en ligne*/
+    /*flex-wrap: retour à la ligne lorsque la taille du flex conteneur est atteint*/
+    flex-flow : row wrap;
+    justify-content: space-around;
+    background-color: RGBa(120,150,240,1);
+}
+
+.element-flex{
+    /*flex-grow : facteur d'exansion à 0, le flex garde sa grandeur initiale*/
+    /*flex-shrink: facteur de rétrécissement, le flex diminuera d'un facteur de 1 */
+    /*par rapport à l'espace perdu*/
+    /*flex-basis : taille initial de la boite. 20% de la taille du conteneur flex*/
+    flex: 0 1 20%;
+    background-color: RGBa(120,240,150,0.7);
+    height: 50px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 780px){
+    .conteneur-flex{
+        flex-flow: column wrap;
+    }
+}
+

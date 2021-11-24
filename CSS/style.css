@@ -1,0 +1,36 @@
+
+p a {
+
+    background-color: transparent;
+}
+
+.couleurFond {
+  background-color: red;
+}
+#bodyId1{
+  background-color: blue
+  
+;
+}
+
+.positionTableau {
+  width:80%;
+  margin: 0 auto;/*permet de centrer la div dans son élément parent*/
+  background-color: aqua;
+}
+table{
+  margin: 0 auto;
+  width:80%;
+}
+tr, th, td {
+  /*border: 1px solid #333;*/
+  margin: 0 auto;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+  margin: 0 auto;
+}
+

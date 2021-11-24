@@ -1,0 +1,35 @@
+
+body{
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+/**/
+img {
+  margin-top: 10vh;
+}
+
+h1{
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+/*mise en forme des champs du formulaire*/
+input{
+  border-radius: 5px;
+  background-color: #d1cdcb;
+}
+
+/*mise en forme du boutton de soumission*/
+#boutonSoumission {
+  background-color : #fbad77;
+  border-color:#fbad77;
+  width:20vh;
+}
+/*permet de faire un retour à ligne et un espace entre chaque champ du formulaire*/
+.champ{
+  margin-bottom: 10px;
+}
+
+  

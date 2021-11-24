@@ -1,0 +1,27 @@
+body{
+    font-family : Arial, sans-serif;
+    font-size : 16px;
+    text-align: center;
+}
+p{
+    font-size: 1em;
+  }
+  
+  /*Hauteur totale de ligne (texte + interligne) = 2 fois
+   *la hauteur du texte*/
+  .p1{
+      line-height: 2em;
+  }
+  
+  /*Hauteur totale de ligne (texte + interligne) = 3 fois
+   *la hauteur du texte*/
+  .p2{
+      line-height: 300%;
+  }
+  
+  /*style appliqué à p3 et p4 : La hauteur totale de la ligne (texte + interligne) est égale
+  *à la hauteur du texte. La hauteur de l'interligne est donc null*/
+   .p3, .p4 {
+       line-height: 1em;
+   }
+

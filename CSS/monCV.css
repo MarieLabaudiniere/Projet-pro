@@ -1,0 +1,14 @@
+#menu{
+    list-style-type: none;
+}
+
+#menu > li {
+    background-color: yellow;
+    border : 1px solid black;
+    margin: 10px;
+    text-align: center;
+}
+
+#menu > li:hover{
+    background-color: tomato;
+}

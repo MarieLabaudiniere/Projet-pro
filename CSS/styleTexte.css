@@ -1,0 +1,73 @@
+body{
+    font-family : 'Source code pro', Verdana, sans-serif;
+    font-size: 12px;
+}
+/*déclaration de l'apparence des textes des paragraphe*/
+/*valeur absolue : xx-small, x-small ...*/
+#p1{
+    font-size: large;
+}
+/*valeur relative : larger, smaller*/
+#p2{
+    font-size: larger; 
+}
+/*valeur de longueur : px, em, rem*/
+#p3{
+    font-size: 0.5em; 
+}
+/*valeur proportionnelle*/
+#p4{
+    font-size: 80%;  
+}
+span {
+    font-size: 1.5rem; 
+}
+p{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline overline #FF3028;
+    text-shadow: red 0 -2px;
+font-size: 20px;
+}
+
+/* manipulation de la propriété width et des différents types de mesures */
+.conteneur{
+    width: 400px;
+    color: black;
+    border: 1px solid black;/*Crée une bordure autour du div*/
+  }
+  
+  #d1{
+    font-size: 16px; /*Taille (hauteur) du texte : 16px*/
+    width: 50%;/*Largeur égale à 50% de celle de l'élément parent = 400px / 2 = 200px**/
+    background-color: blue;
+  }
+
+  #d2{
+    font-size: 16px; /*Taille (hauteur) du texte : 16px*/
+    width: 2em; /*Largeur égale à 2 fois 16px = 32px*/
+    background-color: purple;
+  }
+
+
+/*On ajoute une bordure autour de l'élément conteneur.
+ *Le div fait 70% de la largeur de son parent (le body)*/
+.conteneur{
+    border: 1px solid black;
+    width: 70%;
+  }
+  
+  /*Le texte est centré p/r à l'élément parent (le div conteneur)*/
+  h1{
+      text-align: center;
+  }
+  /*Texte aligné à gauche p/r à l'élément parent (le div)*/
+  .p1{
+      text-align: left;
+  }
+  /*Texte aligné à droite p/r à l'élément parent (le div)*/
+  .p2{
+      text-align: right;
+  }
+  
+  

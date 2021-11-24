@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Marges Bootstrap</title>
+</head>
+
+<body>
+    <p class="lead bg-secondary p-3">exemple de définition de marges</p>
+    <div class="container mt-2">
+        <p class="text-white bg-dark rounded">Pas de marge</p>
+        <p class="text-white bg-dark pl-3 rounded">padding-left: 1rem</p>
+        <p class="text-white bg-dark ml-3 rounded">margin-left: 1rem</p>
+        <p class="text-white bg-dark pl-3 ml-3 rounded">padding-left: 1rem et margin-left: 1rem</p>
+        <p class="text-white bg-dark p-2 rounded">padding: 0.5rem</p>
+    </div>
+
+    <p class="lead bg-secondary p-3">centrage d'élément</p>
+    <!--attention un élément centré ne va pas centré son contenu, il le mettra par défaut à gauche-->
+    <div class="container bg-dark">
+        <div class="mx-auto bg-warning w-75">
+          <p class="py-2">Element div centré dans notre conteneur</p>
+        </div>
+        <p class="mx-auto p-4 bg-light w-75">Element p centré dans notre conteneur</p>
+    
+        <div class="mx-auto bg-info w-75">
+            <p class="mx-auto py-4 bg-success w-75">Element p centré dans un div lui même centré dans notre conteneur</p>
+        </div>
+    </div>
+</body>
+
+</html>

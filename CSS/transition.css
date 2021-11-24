@@ -1,0 +1,94 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    /*reset des marges*/
+    margin:0;
+}
+p{
+    font-size: 30px;
+}
+div{
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+/*Etat normal*/
+#tr1{
+    background-color: orange;
+    transition-property: background-color;
+    transition-duration: 5s;
+}
+/*Lors du survol*/
+/*#tr1:hover{
+    background-color: blue;
+}*/
+#tr1:active{
+    background-color: red;
+}
+/*pour les autres manipulations*/
+#tr2{
+    background-color: orange;
+    transition-property: background-color;
+    transition-duration: 0s;
+}
+#tr3{
+    background-color: orange;
+    transition-property: background-color, border;
+    transition-duration: 2s;
+}
+#tr4{
+    background-color: orange;
+    transition-property: all;
+    transition-duration: 8s;
+}
+#tr2:hover, #tr3:hover, #tr4:hover{
+    background-color: blue;
+    border: 5px solid red;
+    color: white;
+}
+/*transition avec changement de taille
+et différentes vitesses*/
+.affichageBoite{
+    width: 50%;
+    height: 60px;
+    margin: 20px auto;
+    border: 2px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 15px;
+    background-color: orange;
+    transition-property: width;
+    transition-duration: 2s;
+}
+
+#tr5{
+    transition-timing-function: ease;
+    transition-delay: 2s;
+}
+#tr6{
+    transition-timing-function: ease-in;
+}
+#tr7{
+    transition-timing-function: ease-out;
+}
+#tr8{
+    transition-timing-function: ease-in-out;
+}
+#tr9{
+    transition-timing-function: linear;
+}
+#tr10{
+    transition-timing-function: cubic-bezier(0.6, 0, 1, 1);
+}
+
+#tr5:hover, #tr6:hover, #tr7:hover, #tr8:hover, #tr9:hover, #tr10:hover{
+    width: 100%;
+}
+
+
+
+
+
+

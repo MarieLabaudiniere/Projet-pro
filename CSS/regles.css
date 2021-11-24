@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin:0;
+}
+
+/*@counter-style winners-list {
+    system: fixed;
+    symbols: url('../Medias/gold-medal.svg') url('../Medias/silver-medal.svg') url('../Medias/bronze-medal.svg');
+    suffix: " ";
+}*/
+
+ul {
+    list-style: winners-list;
+    text-align: left;
+    margin-left: 10%;
+}
+
+li{
+    font-size: 40px;
+    padding: 10px;
+}
+
+.premier{
+    list-style-image: url('../Medias/gold-medal.svg');
+}
+.deuxieme{
+    list-style-image: url('../Medias/silver-medal.svg');
+}
+.troisieme{
+    list-style-image: url('../Medias/bronze-medal.svg');
+}
+
+
+/*list-style: symbols(url('../Medias/gold-medal.svg') url('../Medias/silver-medal.svg') url('../Medias/bronze-medal.svg'));*/

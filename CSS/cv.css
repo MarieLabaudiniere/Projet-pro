@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+}
+
+header {
+    background: url(https://live.staticflickr.com/1656/26031883676_182191d803_b.jpg);
+    background-size: cover;
+    background-color: #58aff6;
+    top: 0;
+    height: 10vw;
+    width: 100vw;
+}
+
+nav {
+    background-color: gray;
+}
+
+ul {
+    /*conteneur flexible pour les éléments de la liste*/
+    display: flex;
+    list-style: none;
+    background-color: gray;
+    justify-content: center;
+}
+
+li {
+    padding: 20px;
+}
+
+.futursProjets {
+    /*conteneur flexible pour les articles*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    background-color: burlywood;
+}
+
+.miseEnForm {
+    border: 1px solid black;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+footer {
+    margin: 20px;
+}

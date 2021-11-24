@@ -1,0 +1,30 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin:0;
+}
+table {
+    /*centrage du tableau*/
+    margin:20% auto;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+thead {
+    background-color: gray;
+}
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .prenom{
+    background-color: #d7d9f2;
+  }
+  .adresse{
+    background-color: #ffe8d4;
+  }
+  /*alternance de couleur sur les lignes pour les
+  lignes paires*/
+  tr:nth-child(even) { 
+    background-color: Lightgrey; 
+    }

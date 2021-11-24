@@ -1,0 +1,100 @@
+
+
+/*p{
+    background-color: lightGreen;
+    border: 1px solid black;
+  }
+  
+  .p2{
+    padding: 20px;
+  }
+  
+  .p3{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  span{
+    background-color: orange;
+  }
+  .s1{
+    padding: 10px;
+  }
+*/
+  /*style pour manipuler les margin*/
+
+
+/*On reset les marges pour ensuite bien les redéfinir*/
+body, p{
+  margin: 0px;
+}
+div{
+  background-color: #0AE;/*Bleu*/
+}
+p{
+  background-color: #0EA;/*Vert*/
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+/*fusion parent et enfant
+div{
+  background-color: #0AE;
+  margin: 20px 0px;
+}
+p{
+  background-color: #0EA;
+}
+.p1{
+  margin-top: 20px;
+}
+.p2{
+  margin-bottom: 40px;
+}
+.bordure{
+  border: 1px solid black;
+}*/
+
+/*p{
+  background-color: lightBlue;
+}
+#p1{
+  margin-bottom: 30px;
+}
+
+#p2, #p3{
+  margin-top: 50px;
+}
+
+#p6{
+  margin: 10px 20px 30px 40px ;
+}
+#p8{
+  margin-right: 40px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+#p9{
+  margin: 10px 50px;
+}
+#p11{
+  margin: 20px;
+}
+span{
+  margin: 100px;
+  background-color: yellow;
+}
+#p10{
+  margin-top: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+}*/
+
+
+
+  
+  
