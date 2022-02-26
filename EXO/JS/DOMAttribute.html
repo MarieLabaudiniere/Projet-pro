@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : modif Attribut</title>
+</head>
+
+<body>
+    <img src="../../Medias/bronze-medal.svg" alt="Médaille de bronze" width="20%">
+    <p>Vous avez la Médaille de bronze</p>
+    
+    <a href="#" onclick="modifImage();" style="margin:10px">Modif</a>
+
+    <script>
+        // modifImage
+        function modifImage() {
+                const img = document.querySelector('img');
+                const para = document.querySelector('p');
+                const valSrc = String(img.src);
+                const isBronze = valSrc.indexOf("bronze") != -1 ? true : false;
+                const isSilver = valSrc.indexOf("silver") != -1 ? true : false;
+            if (isBronze) {
+                img.src = "../../Medias/silver-medal.svg";
+                para.textContent = "Vous avez la Médaille d'argent";
+            } else if (isSilver) {
+                img.src = "../../Medias/gold-medal.svg";
+                para.textContent = "Bravo! vous avez gagné la médaille d'or!";
+            } else {
+                para.textContent = "Vous ne pouvez pas gagner plus!";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Objet Set</p>
+    <script>
+        //exemple 1 du cours avec des nombres
+        const nombres = new Set([1, 2, 5, 8]);
+        nombres.add(1); //si existe déjà alors n’est pas ajouté
+        nombres.add(5);
+        nombres.add(10);
+        const nombresIter = nombres.values();
+        const nb = nombres.size;
+        document.write("taille du Set : " + nb + "<br>");
+        for (let i = 0; i < nb; i++) {
+            document.write(nombresIter.next().value + " ");
+        }
+
+        // exemple 2 du cours chaine de caractères
+        const nombres = new Set("bonjour");
+        //nombres.delete("b");
+        const nombresIter = nombres.values();
+        const nb = nombres.size;
+        document.write("taille du Set : " + nb + "<br>");
+        for (let i = 0; i < nb; i++) {
+            document.write(nombresIter.next().value + " ");
+        }
+        //exemple 3 liste d'objets
+        const materiels = new Set([{ nom: 'ordi port', prix: 456 },
+        { nom: 'ordi fixe', prix: 564 }]);
+
+        const nombresIter = materiels.values();
+        const nb = materiels.size;
+        document.write(`taille du Set : ${nb} <br>`)
+        for (let i = 0; i < nb; i++) {
+            document.write(nombresIter.next().value + " ");
+        }
+    </script>
+    <p>Objet Map</p>
+    <script>
+        //exemple 1
+        const semaine= new Map([[0,"dimanche"], [1,"lundi"], [2,"Mardi"]]);
+        semaine.set(3, "Mercredi");
+        semaine.set(4, "Jeudi");
+        semaine.set(5, "Vendredi");
+        semaine.set(6, "Samedi");
+        const nbJours = semaine.size;
+        const semaineIter = semaine.values();
+        for (let i=0; i < nbJours; i++) {
+            document.write(semaineIter.next().value);
+        }
+
+        //exemple 2
+        const reservations = new Map([
+              [new Date(2022, 01, 10), {nom:'ordi portable', prix:456}],
+              [new Date(2022, 01, 22), {nom:'ordi fixe', prix:532}]
+                                    ]);
+        const nbResa = reservations.size;
+        const resaIte = reservations.entries();
+        for (let i=0; i<nbResa; i++) {
+            const resa = resaIte.next().value;
+            let dateResa = resa[0];
+            let dd = dateResa.getDate().toString().padStart(2, '0');
+            let mm = dateResa.getMonth().toString().padStart(2, '0');
+            let yyyy = dateResa.getFullYear();
+            let dateMiseEnForme = dd + "/" + mm + "/" + yyyy;
+            document.write(`Resa du ${dateMiseEnForme} concerne : ${resa[1].nom}<br>`)
+        }
+
+    </script>
+</body>
+
+</html>

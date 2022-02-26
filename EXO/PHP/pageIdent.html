@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>identification</title>
+</head>
+
+<body>
+    <!--conteneur principal-->
+    <div class="container">
+        <!--formulaire d'identification qui envoie vers la page PHP ident.php-->
+        <form class="bg-light m-3 rounded border border-info" action="ident.php" method="post">
+            <legend class="text-center">Identification</legend>
+            <!--ajout d'un séparateur ayant le même thème que le bouton-->
+            <hr class="border border-info">
+            <!--utilisation du style bootstrap form row afin d'utiliser une grille pour gérer la taille
+            des éléments du formulaire. justify-content-center permet de les centrer-->
+            <div class="form-row justify-content-center">
+                <!-- ml-3 : marge left et mt-3 : marge top-->
+                <div class="col-8 ml-3 mt-3">
+                    <!-- label et input sont liés
+                    mr : marge right-->
+                    <label class="mr-2" for="nom">Entrez votre nom</label>
+                    <!--placehoilder permet d'avoir un texte par défaut mais si envoi du formulaire, aucun paramètre d'envoyé-->
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="NOM">
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="col-8 ml-3 mt-3">
+                    <label class="mr-2" for="prenom">Entrez votre nom</label>
+                    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prénom">
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="col-8 ml-3 mt-3">
+                    <label class="mr-2" for="age">Entrez votre date de naissance</label>
+                    <input type="date" class="form-control" name="dateNaissance" id="dateNaissance" placeholder="01/01/1990">
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="col-8 ml-3 mt-3">
+                    <label class="mr-2" for="email">Entrez votre mail</label>
+                    <!--from-control permet un controle sur le type de champ lors de la soumission du formulaire-->
+                    <input type="email" class="form-control" id="email"
+                        placeholder="marie.labaudiniere@grta-paysdelaloire.fr">
+                </div>
+            </div>
+            <div class="m-3 text-center">
+                <button class="btn btn-info btn-lg" type="submit">Go!</button>
+            </div>
+
+
+        </form>
+    </div>
+</body>
+
+</html>

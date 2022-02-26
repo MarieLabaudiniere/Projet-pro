@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableaux JS</title>
+</head>
+<body>
+    <p>tableaux indexés</p>
+    <script>
+        // //1- création du tableau de matériel
+        // const materiels = ['ordi portable', 'ordi fixe', 'tablette', 'smartphone'];
+        // //2- parcours des éléments du tableau
+        // const nbMat = materiels.length;
+        // for (let i = 0; i < nbMat; i++) {
+        //     let materiel = materiels[i];
+        //     document.write(materiel + '<br>');
+        // }
+        // //3- ajout d'élément dans le tableau
+        // materiels.push('souris', 'clavier');
+
+        // //4- supression du dernier élément
+        // materiels.pop();
+
+        //5- AFFICHAGE RAPIDE pour les tests
+        //document.write('affichage rapide : ' + materiels.toString());
+
+        //AFFICHAGE DANS LE DOM
+        // const nbMat = materiels.length;
+        // let listeMat = document.createElement('ul');
+        // for (let i=0; i<nbMat; i++) {
+        //     let elementList = document.createElement('li');
+        //     elementList.textContent = materiels[i];
+        //     listeMat.appendChild(elementList);
+        // }
+        // document.body.appendChild(listeMat);   
+    </script>
+    <p>tableaux d'objets</p>
+    <script>
+        //1- création du tableau d'objets
+        const materiel1 = {nom:"ordi portable", prix: 456};
+        const materiel2 = {nom:"ordi fixe", prix: 345};
+        const materiels = [materiel1, materiel2];
+
+        //2- ajout d'un élément 
+        const materiel3 = {nom:"tablette", prix: 656};
+        materiels.push(materiel3);
+
+        //3- affichage des éléments
+        const nbMat = materiels.length;
+
+        //4- calcul du prix total des éléments du tableau
+        //déclaration et instanciation de la variable qui va calculer le px total
+        let pxTotal = 0;
+        //parcours des éléments du tableau
+        for(let i = 0; i < nbMat; i++) {
+            const materiel = materiels[i];
+            pxTotal += materiel.prix;
+            document.write('<b>materiel ' + i + '</b><br>');
+            document.write(`nom : ${materiel.nom} et prix : ${materiel.prix}<br>`);
+        }
+
+        //affichage du px total
+        document.write(`<br><b>PRIX TOTAL : ${pxTotal}</b>`);
+
+    </script>
+</body>
+</html>

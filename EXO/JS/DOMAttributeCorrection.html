@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : modif Attribut</title>
+</head>
+
+<body>
+    <main>
+        <div style="display: flex;flex-direction: column;align-items: center;">
+            <h1>Les médailles</h1>
+            <img src="../../Medias/bronze-medal.svg" alt="Médaille de bronze" width="20%">
+            
+            <p>Vous avez la Médaille de bronze</p>
+            <div><button onclick="agrandissement()" style="margin:10px; width:50px;">+</button>
+                <button onclick="diminution()" style="margin:10px; width:50px;">-</button></div>
+            <a href="#" onclick="modifImage();" style="margin:10px">Modif</a>
+        </div>
+    </main>
+    <script>
+        //agrandissement de la taille de l'image
+        //augmentation de 10 de sa taille
+        function agrandissement() {
+            const img = document.querySelector('img');
+            //width correspond à la taille réelle de l'image à l'écran en pixel.
+            img.width += 10;
+            
+        }
+
+        //diminution de la taille de l'image
+        //diminution de 10 px
+        function diminution() {
+            const img = document.querySelector('img');
+            //width correspond à la taille réelle de l'image à l'écran en pixel.
+            img.width -= 10;
+        }
+        // modifImage
+        function modifImage() {
+            const img = document.querySelector('img');
+            const para = document.querySelector('p');
+            const valSrc = String(img.src);
+            const isBronze = valSrc.indexOf("bronze") != -1 ? true : false;
+            const isSilver = valSrc.indexOf("silver") != -1 ? true : false;
+            if (isBronze) {
+                img.src = "../../Medias/silver-medal.svg";
+                img.alt = "Médaille d'argent";
+                para.textContent = "Vous avez la Médaille d'argent";
+            } else if (isSilver) {
+                img.src = "../../Medias/gold-medal.svg";
+                img.alt = "Médaille d'or";
+                para.textContent = "Bravo! vous avez gagné la médaille d'or!";
+            } else {
+                para.textContent = "Vous ne pouvez pas gagner plus!";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : modif de l'arbre</title>
+</head>
+
+<body>
+    <div id="div1" style="display: flex;flex-direction: column;align-items: center;">
+        <div id="div2" style="text-align: center;">
+            <h1>Ajout d'élément dans le DOM</h1>
+            <p id="para1">paragraphe 1</p>
+            <p id="para2">paragraphe 2</p>
+        </div>
+        <button onclick="creatElement()" style="margin:10px">nouvel Element</button>
+        <button onclick="creatParaInDiv2()" style="margin:10px">création nouveau paragraphe</button>
+        <button onclick="removeLastParaInDiv2()" style="margin:10px">suppression du dernier paragraphe</button>
+
+    </div>
+
+
+    <script>
+        //création d'un élément supplémentaire dans le body
+        function creatElement() {
+            const para = document.createElement('p');
+            para.textContent = "j'ai été créer par du JS";
+            //appendChild met le nouvel élément à la suite des autres.
+            document.body.appendChild(para);
+
+        }
+
+        //création d'un paragraphe à la suite des autres paragraphe
+        function creatParaInDiv2() {
+            const para = document.createElement('p');
+            const div = document.getElementById("div2");
+            const paras = document.querySelectorAll("#div2 > p");
+            const nbPara = paras.length;
+            const indexPara = nbPara + 1;
+            para.setAttribute("id", `para${indexPara}`);
+            para.textContent = `paragraphe ${indexPara} créer en JS`;
+            div.appendChild(para);
+        }
+        
+        //suppression du dernier paragraphe contenus dans div2
+        function removeLastParaInDiv2() {
+            const paras = document.querySelectorAll("#div2 > p");
+            const nbPara = paras.length;
+            if (nbPara > 0) {//suppression uniquement s'il y a des paragraphes
+                const paraRemove = paras[nbPara - 1];
+                const div = document.getElementById("div2");
+                div.removeChild(paraRemove);
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Entrez un nombre compris entre 5 et 10 :</p>
+
+    <input id="saisie" type="text">
+    <button type="button" onclick="control()">Test valeur</button>
+    <p id="p01"></p>
+
+    <script>
+        function control() {
+            const message = document.getElementById("p01");
+            let x = document.getElementById("saisie").value;
+            try {
+                if (x == "") throw "vide";
+                if (isNaN(x)) throw "n'est pas un nombre";
+                x = Number(x);
+                if (x < 5) throw "nombre trop petit";
+                if (x > 10) throw "nombre trop grand";
+                message.textContent = "Bravo, vous avez saisi une valeur correct!"
+            }
+            catch (err) {
+                message.textContent = "Vous avez mal saisi votre valeur : " + err;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

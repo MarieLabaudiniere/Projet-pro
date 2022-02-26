@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire controle</title>
+    <!--<link rel="stylesheet" href="../../CSS/form.css">-->
+</head>
+
+<body>
+    <div id="div1" style="display: flex;flex-direction: column;align-items: center;">
+        <form name="formulaire" id= "form1" action="" onsubmit="controlForm()">
+            <div>
+                <label>Nom * </label><input name="nom" type="text" size = "20" style="margin:10px" minlength="2" required>
+            </div>
+            <div>
+                <label>Prénom * </label><input name="prenom" type="text" style="margin:10px" required>
+            </div>
+            <div>
+                <label>Age </label><input name="age" type="number" min="0" max="100" style="margin:10px">
+            </div>
+            <div>
+                <label>Date </label><input name="date" type="date" style="margin:10px">
+            </div>
+            <div>
+                <label>Email</label><input name="email" type="email" size="50" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" style="margin:10px">
+            </div>
+            <div>
+                <label>Téléphone</label><input name="tel" type="tel" placeholder="06-22-23-24-25" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" style="margin:10px">
+            </div>
+            <div>
+                <label>Commentaire</label><textarea name="commentaire" minlength = "2" maxlength="10" style="margin:10px"></textarea>
+            </div>
+            <div>
+                <label>Mot de passe</label><input type="password" style="margin:10px">
+            </div>
+            <div>
+                <input type="submit" onclick="controlForm()" value="Envoyer" style="margin:10px">
+            </div>
+        </form>
+        <p id="msgControl" style="color: red;"></p>
+    </div>
+    <script>
+        function controlPwd(elemPwd) {
+            const pwd = String(elemPwd.value);
+            if (!pwd.match(/[0-9]/g) ||
+                !pwd.match(/[A-Z]/g) ||
+                !pwd.match(/[a-z]/g) ||
+                !pwd.match(/[^a-zA-Z\d]/g) || 
+                pwd.length < 12) {
+                    //mot de passe invalide
+                    elemPwd.validity.valid = "false";
+                    //info bulle sur le type d'erreur
+                    elemPwd.setCustomValidity("Votre mot de passe doit comporter au moins une majuscule, minuscule, chiffre et signe de ponctuation");
+                } else {
+                    //nettoyage de l'invalidité de la zone
+                    elemPwd.validity.valid = "true";
+                    elemPwd.setCustomValidity("");
+                }
+        }
+        //fonction qui se sert des contrôles HTML5 pour mettre en avant
+        //les champs qui sont invalides
+        //elle permet également de gérer un message résumant les erreurs.
+        function controlForm() {
+            const form = document.getElementById('form1');
+            const elements = form.elements;
+            let nbElemOblig = 0;
+            let nbTypeElemIncorrect = 0;
+            for(let element of elements) {
+                if (element.type == "password") controlPwd(element);
+                const isValid = element.validity.valid;
+                if (element.hasAttribute('required') && element.value.trim() == "") {
+                    nbElemOblig++;
+                    element.style.borderColor = 'red';
+                    element.style.borderStyle = 'solid';
+                }
+                if ((element.hasAttribute('pattern') || element.type == "password") && !isValid) {
+                    nbTypeElemIncorrect++;
+                    element.style.borderColor = 'red';
+                    element.style.borderStyle = 'solid';
+                }
+
+            }
+            
+            let msgControl = "";
+            if (nbElemOblig > 0) {
+                msgControl += nbElemOblig + " champs obligatoires sont à saisir<br>";
+            }
+            if (nbTypeElemIncorrect > 0) {
+                msgControl += nbTypeElemIncorrect + " champs avec un format incorrect";
+            }
+            if (msgControl.length > 0) {
+                const paraControl = document.getElementById('msgControl');
+                paraControl.innerHTML = msgControl;
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS test Affichage</title>
+</head>
+
+<body>
+    <h1>Tests d'affichage</h1>
+    <p>affichage via textContent</p>
+    <p id="first"></p>
+    <p id="second"></p>
+    <script>
+        //getElementById et querySelector font exacetement la même chose
+        //querySelector n'est pas connu des versions anciennes navigateur
+        //innerHTML est à éviter pour des raisons de performance
+        document.getElementById('first').textContent = "premier test";
+        document.querySelector('#second').textContent = "deuxième test";
+    </script>
+    <p>affichage via la fonction write</p>
+    <!--l'évenement est spécifié en attribut de l'élément HTML
+    write est à utiliser que pour des tests car écrase le HTML existant-->
+    <button type="button" onclick="document.write('troisième test')">Try it</button>
+    <p>affichage via des boites de dialogue</p>
+    <p>boite de dialogue alert</p>
+    <button type="button" onclick="getAlert()">Alert</button>
+    <script>
+        function getAlert() {
+            //message d'info
+            window.alert('quatrième test');
+        }
+    </script>
+    <p id="resultConf"></p>
+    <p>boite de dialogue conf</p>
+    <button type="button" onclick="getConfirm()">Confirm</button>
+    <script>
+        function getConfirm() {
+            //message de confirmation. ok = true, Annuler=false
+            if (confirm("confirmez-vous ce message?")) {
+                document.getElementById('resultConf').textContent = "Vous avez confirmé";
+            } else {
+                document.getElementById('resultConf').textContent = "Vous n’avez pas confirmé!";
+            }
+        }
+    </script>
+    <p>boite de dialogue prompt</p>
+    <button type="button" onclick="getPrompt()">Prompt</button>
+    <p id="resultSaisie"></p>
+    <script>
+        function getPrompt() {
+            //message avec zone de saisie
+            let result = prompt("saisissez un nombre entre 0 et 100");
+            let paraResult = document.getElementById('resultSaisie');
+            //affichage de la valeur saisie par l'utilisateur dans la consol de log du navigateur
+            console.log('la valeur saisie : ' + result);
+            if (result) {
+                if (isNaN(result)) paraResult.textContent = result + " n'est pas un nombre";
+                else paraResult.textContent = "Votre nombre : " + result;
+            } else {
+                paraResult.textContent = "Vous devez saisir un nombre!";
+            }
+        }
+    </script>
+
+    <p>sortie en impression</p>
+    <button onclick="window.print()">Imprimer</button>
+
+
+
+</body>
+
+</html>

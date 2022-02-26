@@ -1,36 +1,26 @@
-
-p a {
-
-    background-color: transparent;
+.navbar-inner{
+  /*height: 90px*/
+  min-height: 60px
+  }
+.navbar .brand{
+  padding: 0 10px;
 }
-
-.couleurFond {
-  background-color: red;
+.navbar .nav > li > a {
+  padding: 20px 15px;
+  /*padding: 35px 15px;*/
 }
-#bodyId1{
-  background-color: blue
-  
-;
+.navbar .btn-navbar {
+  /*margin-right: 0px;*/
+  margin-top:15px;
 }
-
-.positionTableau {
-  width:80%;
-  margin: 0 auto;/*permet de centrer la div dans son élément parent*/
-  background-color: aqua;
+.brand img{
+  margin-top: 5px
 }
-table{
-  margin: 0 auto;
-  width:80%;
+@media (max-width:768px) {
+  .brand img{
+      margin-bottom: 5px
+  }
+  .navbar .nav > li > a {
+      padding: 10px 15px;
+  }
 }
-tr, th, td {
-  /*border: 1px solid #333;*/
-  margin: 0 auto;
-}
-
-thead,
-tfoot {
-  background-color: #333;
-  color: #fff;
-  margin: 0 auto;
-}
-

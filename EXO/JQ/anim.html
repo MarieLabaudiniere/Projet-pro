@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#anim1").click(function () {
+                $("#anim1").animate({ left: '250px' });
+            });
+            $("#anim2").click(function () {
+                $("#anim2").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+            $("#anim3").click(function () {
+                const div = $("#anim3");
+                div.animate({ height: '300px', opacity: '0.4' }, "slow");
+                div.animate({ width: '300px', opacity: '0.8' }, "slow");
+                div.animate({ height: '100px', opacity: '0.4' }, "slow");
+                div.animate({ width: '100px', opacity: '0.8' }, "slow");
+                div.animate({ fontSize: '3em' }, "slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="anim1" style="background-color:#98bf21;height:100px;width:100px;position:absolute;top: 5px;"></div>
+    <br><br>
+    <div id="anim2" style="background-color:cadetblue;height:100px;width:100px;position:absolute;top: 120px"></div>
+    <br><br>
+    <div id="anim3" style="background-color: yellow;height:100px;width:100px;position:absolute;top: 250px">Hello</div>
+    <br><br>
+
+</body>
+
+</html>

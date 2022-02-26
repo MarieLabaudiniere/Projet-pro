@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : accès aux éléments HTML</title>
+</head>
+
+<body>
+    <p class="test1"> paragraphe 0 (pas dans une div)</p>
+    <div id="parent" style="border-style: solid; border-color: red;">
+        <p id="p1" class="test2">paragraphe 1</p>
+        <p id="p2" class="test1">paragraphe 2</p>
+
+        <div id="enfant" style="border-style: solid; border-color: green;">
+            <p id="p3" class="test2">paragraphe 3</p>
+            <p id="p4">paragraphe 4</p>
+        </div>
+    </div>
+    <br>
+    <!--boutons qui permettent d'appeler des fonctions javascript-->
+    <button onclick="getAllParaElems();" style="margin:10px">
+        nb paragraphes total</button><br>
+
+    <button onclick="div1ParaElems();" style="margin:10px">
+        nb paragraphes dans div1</button><br />
+
+    <button onclick="div2ParaElems();" style="margin:10px">
+        nb paragraphes dans div2</button><br>
+
+    <button onclick="getAllClass1Elems();" style="margin:10px">
+        nb d'éléments avec style test1</button><br>
+
+    <button onclick="getAllClass2Elems();" style="margin:10px">
+        nb d'éléments avec style test2</button><br>
+
+    <button onclick="div2Style2Elems();" style="margin:10px">
+        nb d'éléments avec style test2 dans div2</button><br>
+
+    <script>
+        // getAllParaElems affiche le nb de paragraphes existants dans tout le document
+        function getAllParaElems() {
+            const allParas = document.getElementsByTagName('p');
+            const num = allParas.length;
+            alert('Il y a ' + num + ' paragraphes dans ce document');
+        }
+
+        //getAllClass1Elems affiche le nb d'éléments dans tout le document
+        //utilisant le style test1
+        function getAllClass1Elems() {
+            const allClass = document.getElementsByClassName('test1');
+            const num = allClass.length;
+            alert('Il y a ' + num + ' éléments ayant le style test 1 dans ce document');
+        }
+
+        //getAllClass2Elems affiche le nb d'éléments dans tout le document
+        //utilisant le style test2
+        function getAllClass2Elems() {
+            const allClass = document.getElementsByClassName('test2');
+            const num = allClass.length;
+            alert('Il y a ' + num + ' éléments ayant le style 2 dans ce document');
+        }
+
+        //div2Style2Elems affiche le nb d'éléments imbriqués dans la div dont l'id="enfant"
+        //qui ont le style test2
+        function div2Style2Elems() {
+            const div2 = document.getElementById('enfant');
+            const div2Paras = div2.getElementsByClassName('test2');
+            const num = div2Paras.length;
+            alert('Il y a ' + num + ' éléments dans la deuxième div avec le style test 2');
+        }
+
+        //div1ParaElems affiche le nb de paragraphes imbriqués dans la div "parent"
+        function div1ParaElems() {
+            const div1 = document.getElementById('parent');
+            const div1Paras = div1.getElementsByTagName('p');
+            const num = div1Paras.length;
+            alert('Il y a ' + num + ' paragraphes dans la premier div');
+        }
+
+        //div1ParaElems affiche le nb de paragraphes imbriqués dans la div "enfant"
+        function div2ParaElems() {
+            const div2 = document.getElementById('enfant');
+            const div2Paras = div2.getElementsByTagName('p');
+            const num = div2Paras.length;
+            alert('Il y a ' + num + ' paragraphes dans la deuxième div');
+        }
+
+    </script>
+</body>
+
+</html>

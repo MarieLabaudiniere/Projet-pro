@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : modif style</title>
+</head>
+
+<body>
+    <p id="para1">Bienvenue</p>
+    <p id="para2">paragraphe qui change de style!</p>
+    <br>
+    <button onclick="alternDisplay(this);" style="margin:10px">
+        Disparition</button><br>
+    <button onclick="changeStyleColor();" style="margin:10px">
+        Changer de couleur</button><br>
+    <button onclick="changeStyleBgColor();" style="margin:10px">
+        Changer de fond</button><br>
+    <script>
+        //fonction qui fait disparaitre le paragraphe 1 s'il est visible et inversement.
+        //le texte du bouton se met à jour en fonction de ces cas.
+        function alternDisplay(buttonAppel) {
+            const para = document.querySelector('#para1');
+            let disp = para.style.display;
+
+            if (disp == 'none') { //si le paragraphe est caché
+                para.style.display = 'block';
+                buttonAppel.textContent = 'Disparition';
+            } else { // si le paragraphe est visible
+                para.style.display = 'none';
+                buttonAppel.textContent = 'Apparition';
+            }
+
+        }
+
+        // fonction qui alterne la couleur de la police du paragrahe 2
+        // si bleu ou noir alors devient rouge
+        // si rouge alors devient bleu
+        function changeStyleColor() {
+            const para = document.querySelector('#para2');
+            let couleur = para.style.color;
+            if (couleur == 'red') {
+                para.style.color = 'blue';
+            } else {
+                para.style.color = 'red';
+            }
+
+        }
+
+        // fonction qui alterne la couleur de fond du paragraphe 2
+        //si vert ou aucun foind alors devient jaune
+        //si jaune alors devient vert
+        function changeStyleBgColor() {
+            const para = document.querySelector('#para2');
+            let bgCouleur = para.style.backgroundColor;
+            if (bgCouleur == 'yellow') {
+                para.style.backgroundColor = 'green';
+            } else {
+                para.style.backgroundColor = 'yellow';
+            }
+  
+        }
+
+
+    </script>
+</body>
+
+</html>

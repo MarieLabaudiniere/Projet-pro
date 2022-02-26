@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ gliss</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip1").click(function () {
+                $("#panel1").slideDown("slow");
+            });
+            $("#flip2").click(function () {
+                $("#panel2").slideUp("slow");
+            });
+            $("#flip3").click(function () {
+                $("#panel3").slideToggle("slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="flip1" style="text-align: center; 
+    background-color:cadetblue;padding: 5px;border: solid 1px #c3c3c3;">Slide down</div>
+    <div id="panel1" style="text-align: center; display:none;padding:50px; 
+    background-color:cadetblue">Coucou!</div>
+
+    <br><br>
+    <div id="flip2" style="text-align: center; 
+    background-color: bisque;padding: 5px;border: solid 1px #c3c3c3;">Slide up</div>
+    <div id="panel2" style="text-align: center;padding:50px; 
+    background-color:bisque">Aurevoir!</div>
+
+    <br><br>
+    <div id="flip3" style="text-align: center; 
+    background-color: burlywood;padding: 5px;border: solid 1px #c3c3c3;">Slide toggle</div>
+    <div id="panel3" style="text-align: center;display:none;padding:50px; 
+    background-color:burlywood">ça s'en va et ça revient...</div>
+
+
+</body>
+
+</html>

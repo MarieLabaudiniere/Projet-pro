@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : accès élément HTML via querySelector</title>
+</head>
+
+<body>
+    <p class="test1"> paragraphe 0 (pas dans une div)</p>
+    <div id="parent" style="border-style: solid; border-color: red;">
+        <p id="p1" class="test2">paragraphe 1</p>
+        <p id="p2" class="test1">paragraphe 2</p>
+
+        <div id="enfant" style="border-style: solid; border-color: green;">
+            <p class="test2">paragraphe 3</p>
+            <p id="p4">paragraphe 4</p>
+        </div>
+    </div>
+    <br>
+    <button onclick="setMsgPara0();" style="margin:10px">
+        msg para 0</button><br>
+    <button onclick="setMsgParaDiv1();" style="margin:10px">
+        msg pour les para de div1</button><br>
+    <button onclick="setMsgParaDiv2();" style="margin:10px">
+        msg pour les para de div2</button><br>
+    <button onclick="setMsgPara3();" style="margin:10px">
+        msg para 3</button><br>
+
+    <script>
+        function setMsgPara0() {
+            const para0 = document.querySelector('p');
+            para0.textContent = "le paragraphe 0 a été modifié.";
+        }
+
+        function setMsgParaDiv1() {
+            const listeParas = document.querySelectorAll('#parent > p');
+            const nbPara = listeParas.length;
+            for (let i = 0; i < nbPara; i++) {
+                const para = listeParas[i];
+                para.textContent = "paragraphe " + i + " modifié.";
+            }
+        }
+
+        function setMsgParaDiv2() {
+            const listeParas = document.querySelectorAll('#enfant > p');
+            const nbPara = listeParas.length;
+            for (let i = 0; i < nbPara; i++) {
+                const para = listeParas[i];
+                para.textContent = "paragraphe " + i + " modifié.";
+            }
+        }
+
+        function setMsgPara3() {
+            const para0 = document.querySelector('#enfant > .test2');
+            para0.textContent = "le paragraphe 3 a été modifié.";
+        }
+
+
+
+    </script>
+</body>
+
+</html>

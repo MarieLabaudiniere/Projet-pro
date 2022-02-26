@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : Ajout d'évènement</title>
+</head>
+
+<body>
+    <div id="div1" style="display: flex;flex-direction: column;align-items: center;">
+        
+        <p onclick="this.textContent = 'Changer!'">Cliquez-moi!</p>
+
+        <button id="button1">Date du jour</button>
+        <h1 onclick="changeText(this)">Cliquez-moi!</h1>
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+            style="background-color:#D94A38;width:120px;height:20px;padding:40px;margin:10px">
+            Passez la souris</div><br>
+        <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+            style="background-color:#D94A38;width:90px;height:20px;padding:40px;margin:10px">
+            Cliquez-moi</div>
+        <p id="para2" style="border-style: solid;;border-color: blue;padding:20px">Cliquez-moi</p>
+    </div>
+    <script>
+        const button = document.getElementById('button1');
+        button.onclick = getDateJour;
+        const para = document.getElementById('para2');
+        para.addEventListener('click', function(){ alert("coucou!");});
+        function changeText(elem) {
+            elem.textContent = "ça marche!";
+        }
+
+        function getDateJour() {
+            const dateCourante = new Date();
+            const dd = String(dateCourante.getDate()).padStart(2, '0');
+            const mm = String(dateCourante.getMonth() + 1).padStart(2, '0');
+            const yyyy = dateCourante.getFullYear();
+            alert(`date du jour : ${dd}/${mm}/${yyyy}`);
+        }
+
+        function mOver(obj) {
+            obj.textContent = "Merci!"
+        }
+
+        function mOut(obj) {
+            obj.textContent = "Passez la souris"
+        }
+
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.textContent = "Lâchez";
+        }
+
+        function mUp(obj) {
+            obj.style.backgroundColor = "#D94A38";
+            obj.textContent = "Merci";
+        }
+    </script>
+
+</body>
+
+</html>

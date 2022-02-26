@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript label example</title>
+  <style>
+    p {
+      font-family: 'helvetica neue', helvetica, sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      border: 2px solid rgba(0, 0, 200, 0.6);
+      background: rgba(0, 0, 200, 0.3);
+      color: rgba(0, 0, 200, 0.6);
+      box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
+      border-radius: 10px;
+      padding: 3px 10px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="display:flex;">
+    <p>Player 1: Chris</p>
+  </div>
+  <ol style="text-align:center;">
+    <li>élément 1</li>
+    <li>élément 2</li>
+  </ol>
+  <script>
+    //création d'une variable correspondant à l'élément p (objet Element de JS)
+    //l'objet document correspond à notre page
+    let para = document.querySelector('p');
+
+    //ajout d'un écouteur sur notre élément para qui
+    //appelera la fonction updateName lorsque l'évènement click aura lieu
+    //attention à l'orthographe et la casse du nom de l'évènement
+    //attention mettre uniquement le nom de la fonction sans parenthèse
+    para.addEventListener('click', updateName);
+
+    function updateName() {
+      //prompt est la fonction qui ouvre une fen^tre de saisie
+      //récupération de la valeur saisie dans le prompt dans une variable name
+      let name = prompt('Enter a new name');
+      console.log('la valeur saisie : ' + name);
+      //instanciation de la propriété textContent de l'élément para
+      //le + réalise une concaténation
+      para.textContent = 'Player 1: ' + name;
+    }
+  </script>
+
+</body>
+
+</html>

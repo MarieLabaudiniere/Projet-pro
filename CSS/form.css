@@ -1,0 +1,12 @@
+input:invalid {
+    border: 2px solid red;
+}
+
+
+input[type="email"]:valid {
+    border: 1px solid green;
+}
+
+input[type="tel"]:valid {
+    border: 1px solid green;
+}

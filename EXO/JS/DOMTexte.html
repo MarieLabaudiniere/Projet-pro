@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM : Modif texte</title>
+</head>
+
+<body>
+    <p id="para1"> paragraphe 1</p>
+    <div id="div1" style="border-style: solid; border-color: red;">
+        <p id="para2" class="test2">paragraphe 2</p>
+        <p id="para3" class="test1">paragraphe 3</p>
+
+        <div id="div2" style="border-style: solid; border-color: green;">
+            <p id="para4" class="test2">paragraphe 4</p>
+            <p id="para5">Paragraphe 5<span> ne pas toucher</span></p>
+        </div>
+    </div>
+    <br>
+    <!--boutons qui permettent d'appeler des fonctions javascript-->
+    <button onclick="modifTextParaMethode1();" style="margin:10px">
+        Modif texte para Methode1</button><br>
+    <button onclick="modifTextParaMethode2();" style="margin:10px">
+        Modif texte para Methode2</button><br>
+    <button onclick="modifTextParaMethode3();" style="margin:10px">
+        Modif texte para Methode3</button><br>
+
+    <script>
+        // modifTextParaMethode1
+        function modifTextParaMethode1() {
+            const numParaSaisi = prompt('Quel paragraphe voulez-vous modifié?');
+            const numPara = Number(numParaSaisi);
+            if (isNaN(numPara) || numPara > 5) {
+                alert("Vous devez saisir un numéro entre 1 et 5");
+            } else {
+                const para = document.getElementById(`para${numPara}`);
+                //le premier neoud d'un élement text est #Text (le contenu du text)
+                //s'il n'y a pas de text ce noeud n'existera pas!
+                para.firstChild.nodeValue = "<strong>nouveau texte !</strong>";
+            }
+        }
+
+        // modifTextParaMethode2
+        function modifTextParaMethode2() {
+            const numParaSaisi = prompt('Quel paragraphe voulez-vous modifié?');
+            const numPara = Number(numParaSaisi);
+            if (isNaN(numPara) || numPara > 5) {
+                alert("Vous devez saisir un numéro entre 1 et 5");
+            } else {
+                const para = document.getElementById(`para${numPara}`);
+                //innerHTML remplace tout le contenu HTML de l'élément donc
+                //remplacera tous les noeuds enfants
+                //EVITER de l'utiliser car faille de sécurité + réduction des performances
+                //le DOM est regénéré pour pouvoir interpréter le code HTML
+                para.innerHTML = "<strong>nouveau texte !</strong>";
+            }
+        }
+
+        // modifTextParaMethode3
+        function modifTextParaMethode3() {
+            const numParaSaisi = prompt('Quel paragraphe voulez-vous modifié?');
+            const numPara = Number(numParaSaisi);
+            if (isNaN(numPara) || numPara > 5) {
+                alert("Vous devez saisir un numéro entre 1 et 5");
+            } else {
+                const para = document.getElementById(`para${numPara}`);
+                //textContent remplace tout le text de l'élément donc
+                //remplacera tous les noeuds enfants
+                //le code HTML n'est pas interprété
+                para.textContent = "<strong>nouveau texte !</strong>";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

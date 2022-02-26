@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableaux JS</title>
+</head>
+<body>
+    <p>tableaux indexés</p>
+    <script>
+        //1- création du tableau de matériel
+        const materiels = ['ordi portable', 'ordi fixe', 'tablette', 'smartphone'];
+        //2- parcours des éléments du tableau
+        const nbMat = materiels.length;
+        for (let i = 0; i < nbMat; i++) {
+            let materiel = materiels[i];
+            document.write(materiel + '<br>');
+        }
+        //3- ajout d'élément dans le tableau
+        materiels.push('souris', 'clavier');
+
+        //4- supression du dernier élément
+        materiels.pop();
+
+        //5- AFFICHAGE RAPIDE pour les tests
+        document.write('affichage rapide : ' + materiels.toString());
+    </script>
+</body>
+</html>

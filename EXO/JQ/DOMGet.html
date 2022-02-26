@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Get</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("Text: " + $("#testP").text());
+            });
+            $("#btn2").click(function () {
+                alert("HTML: " + $("#testP").html());
+            });
+            $("#btn3").click(function () {
+                alert("Value: " + $("#testInput").val());
+            });
+            $("#btn4").click(function () {
+                alert("Href: " + $("a").attr("href"));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p id="testP">Il y a des chose <b>en gras</b> dans ce texte.</p>
+    <br>
+    <p>Nom: <input type="text" id="testInput" value="Alfred"></p>
+    <br>
+    <a href="https://www.greta-cfa-paysdelaloire.fr/nos-centres-de-formation/greta-cfa-49/">greta</a>
+    <br><br>
+    <button id="btn1">Text paragraphe</button>
+    <button id="btn2">HTML paragraphe</button>
+    <button id="btn3">valeur input</button>
+    <button id="btn4">attribut href</button>
+
+</body>
+
+</html>
