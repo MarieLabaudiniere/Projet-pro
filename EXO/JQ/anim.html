@@ -10,10 +10,10 @@
     <script>
         $(document).ready(function () {
             $("#anim1").click(function () {
-                $("#anim1").animate({ left: '250px' });
+                $(this).animate({ left: '250px' });
             });
             $("#anim2").click(function () {
-                $("#anim2").animate({
+                $(this).animate({
                     left: '250px',
                     opacity: '0.5',
                     height: '150px',
@@ -21,12 +21,12 @@
                 });
             });
             $("#anim3").click(function () {
-                const div = $("#anim3");
-                div.animate({ height: '300px', opacity: '0.4' }, "slow");
-                div.animate({ width: '300px', opacity: '0.8' }, "slow");
-                div.animate({ height: '100px', opacity: '0.4' }, "slow");
-                div.animate({ width: '100px', opacity: '0.8' }, "slow");
-                div.animate({ fontSize: '3em' }, "slow");
+                const $div = $("#anim3");
+                $div.animate({ height: '300px', opacity: '0.4' }, "slow");
+                $div.animate({ width: '300px', opacity: '0.8' }, "slow");
+                $div.animate({ height: '100px', opacity: '0.4' }, "slow");
+                $div.animate({ width: '100px', opacity: '0.8' }, "slow");
+                $div.animate({ fontSize: '3em' }, "slow");
             });
         });
     </script>

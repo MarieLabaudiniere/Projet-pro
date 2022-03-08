@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $('p').append("<b>Ajout de texte</b>");
+            });
+            $('#btn2').click(function () {
+                $('ol').append("<li>Ajout de l'élément 4</li>", "<li>Ajout de l'élément 5</li>");
+            });
+            $('#btn3').click(function () {
+                $('ol').prepend("<li>Ajout de l'élément -1</li>", "<li>Ajout de l'élément 0</li>");
+            });
+            $('#btn5').click(function () {
+                $('p').before("<b>ajout d'un élément avant</b>");
+                $('p').after("<i>ajout d'un élément après</i>");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div style="margin: 0 auto; text-align: center;">
+        <div style="background-color: bisque;">
+            <!--résultats des actions des boutons -->
+            <p>Premier paragraphe.</p>
+            <p>Deuxième paragraphe.</p>
+            <ol>
+                <li>élément 1 de la liste</li>
+                <li>élément 2 de la liste</li>
+                <li>élément 3 de la liste</li>
+            </ol>
+        </div>
+        <!--Démonstration de la méthode append-->
+        <h3>la méthode append</h2>
+            <button id="btn1">Ajout de texte</button>
+            <button id="btn2">Ajout de contenu</button>
+            <hr>
+            <!--Démonstration de la méthode prepend-->
+            <h3>la méthode prepend</h2>
+                <button id="btn3">Ajout de contenu au début</button>
+                <hr>
+                <h3>les méthodes after ou before</h2>
+                    <button id="btn5">Ajout d'éléments</button>
+
+    </div>
+
+</body>
+
+</html>

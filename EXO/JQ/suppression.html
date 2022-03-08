@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $('#div1').append("<p class=\"test\">Ajout d'un paragraphe</p>");
+            });
+            $('#btn2').click(function () {
+                //suppression uniquement des paragraphes qui ont class="test"
+                //si aucun argument de spécifié dans la méthode remove alors 
+                //suppression de tous les éléments p
+                $('p').remove(".test");
+            });
+            $('#btn3').click(function () {
+                //aucun argument pour la méthode empty, cela supprime tous les éléments enfants
+                $('#div1').empty();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div style="margin: 0 auto; text-align: center;">
+        <div id="div1"
+            style="margin: 0 auto; height:300px;width:300px;border:1px solid black;background-color: gainsboro;">
+            <img src="../../Medias/logo_greta.png" width="30%">
+            <h4>contenu de la div</h4>
+            <p>paragraphe</p>
+        </div>
+        <br>
+        <button id="btn1">Ajout d'un paragraphe</button>
+        <button id="btn2">Suppression des paragraphes</button>
+        <button id="btn3">Nettoyage</button>
+    </div>
+</body>
+
+</html>
