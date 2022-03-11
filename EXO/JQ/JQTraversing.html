@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Traversing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        div * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#btn1').click(function(){
+                const elem = prompt("saisissez l'élément : ");
+                $(elem).parent().css({"color": "red", "border": "2px solid red"});
+            });
+            $('#btn2').click(function(){
+                const elem = prompt("saisissez l'élément : ");
+                $(elem).parents().css({"color": "red", "border": "2px solid red"});
+            });
+            $('#btn3').click(function(){
+                const elem = prompt("saisissez l'élément : ");
+                $(elem).children().css({"color": "green", "border": "2px solid green"});
+            });
+            $('#btn4').click(function(){
+                const elem = prompt("saisissez l'élément : ");
+                const childs = prompt("saisissez l'enfant à rechercher:");
+                const $childs = $(elem).find(childs);
+                if($childs.length > 0) {
+                    $childs.css({"color": "green", "border": "2px solid green"});
+                } else {
+                    alert(childs + " n'existe pas!");
+                }
+            });
+            $('#btn5').click(function(){
+                const elem = prompt("saisissez l'élément : ");
+                $(elem).next().css({"color": "green", "border": "2px solid green"});
+            });
+            $('#btn6').click(function(){
+                const elem = prompt("saisissez l'élément : ");
+                $(elem).prev().css({"color": "green", "border": "2px solid green"});
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <div>div (parent)
+            <ul>ul
+                <li id="elem1">li élément 1<span class="test">span 1</span><span>span 2</span></li>
+                <li id="elem2">li élément 2 avec <b>texte en gras</b></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <button id="btn1">parent direct (parent)</button>
+    <button id="btn2">tous les parents (parents)</button>
+    <button id="btn3">enfants directs (children)</button>
+    <button id="btn4">enfants recherchés (find)</button>
+    <button id="btn5">suivant (next)</button>
+    <button id="btn6">précédent (prev)</button>
+</body>
+
+</html>

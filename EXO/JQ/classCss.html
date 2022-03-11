@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class CSS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function(){
+                $("h1, p").addClass("red");
+            });
+            $("#btn1").click(function(){
+                $("h1, p").removeClass("red");
+            });
+            //ajout de l'évènement permettant de faire un toggleClass
+            
+        });
+    </script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Titre 1</h1>
+<p>ceci est un paragraphe.</p>
+<button id="btn1">Ajout d'une classe</button>
+<button id="btn2">Suppresion d'une classe</button>
+<button id="btn3">Toggle d'une classe</button>
+</body>
+
+</html>
